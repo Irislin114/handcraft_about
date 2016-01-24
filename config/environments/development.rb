@@ -38,4 +38,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Mailer setting
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.mandrillapp.com',
+  #   port:                 587,
+  #   domain:               'www.ntu.edu.tw',
+  #   user_name:            'iris5968327@naver.com',
+  #   password:             'XZpKoPgEBN04qRs1sBoK_w',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true 
+  # }
 end

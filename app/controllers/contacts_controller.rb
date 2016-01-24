@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
 
   def create
     # @contact = Contact.new(params[:contact])
-    
+
     @contact = Contact.new(contact_params)
 
 
@@ -13,6 +13,10 @@ class ContactsController < ApplicationController
       # 成功
       # 一次性訊息
       flash[:notice] = "成功送出！"
+
+      # send mail to admin
+      ContactMailer.send_notification(@contact).deliver_later
+
       # 轉址
       # 回到Contact頁面
       redirect_to root_path

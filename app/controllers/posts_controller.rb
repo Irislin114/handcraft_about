@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :find_post, only:[:show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -20,14 +23,23 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id: params[:id])
-    redirect_to posts_path unless @post
+    # @post = Post.find_by(id: params[:id])
+    # redirect_to posts_path unless @post
+
     # if not @post
-    #   redirect_to posts_path
+    # redirect_to posts_path
     # end
   end
 
   def show
+
+  end
+
+  def update
+  end
+
+  def destroy
+
   end
 
   #Strong Parameter
@@ -35,4 +47,10 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content)#resource
   end
+
+  def find_post
+    @post = Post.find_by(id: params[:id])
+    redirect_to posts_path unless @post
+  end
+
 end

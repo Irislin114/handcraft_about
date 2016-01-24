@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#delayed_job
+gem 'delayed_job_active_record'
+
 #form
 gem 'simple_form'
 
