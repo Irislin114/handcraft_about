@@ -1,0 +1,15 @@
+<ul>
+<% post.each do |post| %>
+  <li>
+  <%= post.title%>
+
+  <!-- 於 posts_helper.rb 定義這個 method -->
+  <%= tw_calendar(post.created_at) %>
+
+  <!-- <%= link_to '檢視', post_path(post)%> -->
+  <%= link_to '檢視', post %>
+  <%= link_to '編輯', edit_post_path(post)%>
+  <%= link_to '刪除', post_path(post), method: 'delete' %>
+  </li>
+<% end %>
+</ul>

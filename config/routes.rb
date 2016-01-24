@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+
+  root "static_pages#home"
+
   get "/about", to: "static_pages#about"
   # get "/", to: "static_pages#home"   #index
   # get "/about.aspx", to: "static_pages#home"
-  root "static_pages#home"
+  get "/bmi", to: "static_pages#bmi"
+  post "/bmi", to: "static_pages#bmi"
 
-  resources :contacts   #複數
+  resources :contacts, only: [:index, :create]   #複數
+  resources :posts
+
+
+  namespace :admin do
+    resources :contacts, except: [:new, :create, :destroy]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

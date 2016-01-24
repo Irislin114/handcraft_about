@@ -1,0 +1,23 @@
+<h1>Posts#index</h1>
+
+<%= link_to '新增', new_post_path %>
+
+<!-- 方法一 -->
+<!-- 對應 _post_list.html.erb -->
+<!-- <%= render "post_list", posts: @posts %> -->
+
+
+<!-- 方法二 -->
+<ul>
+<!-- 對應 _post.html.erb -->
+<%= render @posts %>
+</ul>
+
+
+<!-- Title隨不同頁面變化 方法一 -->
+<% content_for :title_block do %>
+12345
+<% end %>
+
+<!-- Title隨不同頁面變化 方法二 -->
+<!-- <%provide :bottom_js, "hello!"%> -->

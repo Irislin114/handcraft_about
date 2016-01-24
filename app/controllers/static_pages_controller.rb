@@ -9,4 +9,18 @@ class StaticPagesController < ApplicationController
 
   def about  #不一定要寫
   end
+
+  def bmi
+      if request.post?
+        # params預設為字串
+          h = params[:height].to_f / 100
+          w = params[:weight].to_f
+
+          # view取用變數
+          @bmi = w / (h * h)
+
+          # 取小數點第二位
+          render text: @bmi.round(2)
+      end
+  end
 end
