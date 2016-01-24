@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get "/about", to: "static_pages#about"
+  # get "/", to: "static_pages#home"   #index
+  # get "/about.aspx", to: "static_pages#home"
+  root "static_pages#home"
+
+  resources :contacts   #複數
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

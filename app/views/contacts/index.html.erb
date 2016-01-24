@@ -1,0 +1,24 @@
+<h1>Contact us</h1>
+
+<% if @contact.errors.any? %>
+  <ul>
+  <% @contact.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for(@contact) do |f| %>
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+  <br />
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br />
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+
+<% end %>
