@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 #delayed_job
 gem 'delayed_job_active_record'
 
